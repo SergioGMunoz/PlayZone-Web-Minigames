@@ -7,7 +7,7 @@ let hasAnswered = false;
 const timerElement = document.getElementById('time');
 const pointsElement = document.getElementById('points');
 const questionElement = document.getElementById('question');
-const answersElement = document.getElementById('awnsers');
+const answersElement = document.getElementById('answers');
 const nextButton = document.querySelector('#end-button button');
 
 // Inicialización del temporizador

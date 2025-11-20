@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentación</title>
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- BOOTSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body class="bg-secondary">
+  <div id="page-body" class="bg-body-secondary">
+    <header id="header" class="bg-primary text-light d-flex justify-content-center align-items-center">
+      <h1><a href="index.html" title="Página principal">PlayZone</a></h1>
+    </header>
+
+    <main id="main-content" class="container py-5">
+      <h2 class="text-center mb-4">Documentation</h2>
+
+      <!-- Table of Contents -->
+      <nav class="container py-4">
+        <h3 class="mb-4">Contents</h3>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <a href="#planning-organization" title="Planning and Organization"
+              class="text-decoration-none text-primary">
+              <strong>Planning and Organization</strong>
+            </a>
+          </li>
+          <li class="list-group-item">
+            <a href="#structure" title="Structure" class="text-decoration-none text-primary">
+              <strong>Structure</strong>
+            </a>
+          </li>
+          <li class="list-group-item">
+            <a href="#games-description" title="Games Description" class="text-decoration-none text-primary">
+              <strong>Games Description</strong>
+            </a>
+          </li>
+          <li class="list-group-item">
+            <a href="#code-structure" title="Code Structure" class="text-decoration-none text-primary">
+              <strong>Code Structure</strong>
+            </a>
+          </li>
+          <li class="list-group-item">
+            <a href="#issues" title="Encountered Issues" class="text-decoration-none text-primary">
+              <strong>Encountered Issues</strong>
+            </a>
+          </li>
+          <li class="list-group-item">
+            <a href="#improvements" title="Possible Improvements" class="text-decoration-none text-primary">
+              <strong>Possible Improvements</strong>
+            </a>
+          </li>
+        </ul>
+        <hr>
+      </nav>
+
+      <section id="planning-organization" class="row mb-5">
+        <article class="col-12">
+          <h3>Planning and Organization</h3>
+          <!-- --- PLANNING --- -->
+          <h4>Planning</h4>
+          <p>For the project planning, we initially brainstormed ideas for possible games to develop. The first steps
+            were obviously creating the HTML and CSS.</p>
+
+          <div class="dropdown mb-4 text-center">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Discarded Ideas
+            </button>
+            <div class="dropdown-menu p-4" style="width: 500px; max-width: 100vw;">
+              <div class="mb-4">
+                <h5 class="fw-bold mb-2">Glass Bridge</h5>
+                <p class="mb-1 text-muted">The player has a limited number of characters that must cross a two-tile
+                  bridge.</p>
+                <p class="mb-1 text-muted">One of the tiles is fake and will break if the player steps on it.</p>
+                <p class="mb-0 text-muted">The goal is to advance as far as possible across the bridge without losing
+                  all characters.</p>
+              </div>
+
+              <hr class="dropdown-divider">
+
+              <div class="mt-4">
+                <h5 class="fw-bold mb-2">Cowboy Duel</h5>
+                <p class="mb-1 text-muted">The player faces the machine in a duel in old western style.</p>
+                <p class="mb-1 text-muted">To start the game, the player must hold the click until the moment to shoot
+                  is indicated.</p>
+                <p class="mb-1 text-muted">If the player takes longer than the machine to release the click, or releases
+                  it too early, they will lose.</p>
+                <p class="mb-1 text-muted">The time is randomly generated (min. 8 sec, max. 15 sec).</p>
+                <p class="mb-0 text-muted">It was considered to add distractor elements on the screen to increase
+                  difficulty.</p>
+              </div>
+            </div>
+          </div>
+
+          <p>After creating the initial sketches, we began developing the corresponding pages.</p>
+
+          <div class="row justify-content-center text-center">
+            <div class="col-md-6 mb-4">
+              <div class="card border-0 shadow-sm">
+                <img src="resources/img/documentation/home-sketch.png" class="img-fluid rounded-top"
+                  alt="Home page sketch">
+                <div class="card-body">
+                  <p class="card-text fw-semibold text-muted mb-0">Home page sketch</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4">
+              <div class="card border-0 shadow-sm">
+                <img src="resources/img/documentation/guerrillas-sketch.png" class="img-fluid rounded-top"
+                  alt="Guerrillas HUD sketch">
+                <div class="card-body">
+                  <p class="card-text fw-semibold text-muted mb-0">Guerrillas HUD sketch</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article>
+          <!-- --- ORGANIZATION --- -->
+          <h4>Organization</h4>
+          <p>We designed a task plan necessary for the development of each page and game. Each team member was initially
+            responsible for a specific game (Raquel - Quiz, David - Trios, Sergio - Guerrillas). We worked on GitHub
+            using separate branches to avoid conflicts and reported our progress regularly. Additionally, the team
+            reviewed each other's code, suggesting improvements or taking over tasks from other games when needed (for
+            example, in Guerrillas).</p>
+          <p>As the development progressed, we started working on the other games as well, to avoid focusing on just
+            one.</p>
+
+          <div class="row justify-content-center text-center">
+            <div class="col-md-6 mb-4">
+              <div class="card border-0 shadow-sm">
+                <img src="resources/img/documentation/github-commits.png" class="img-fluid rounded-top"
+                  alt="GitHub commits">
+                <div class="card-body">
+                  <p class="card-text fw-semibold text-muted mb-0">Visualization of various commits on GitHub</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4">
+              <div class="card border-0 shadow-sm">
+                <img src="resources/img/documentation/notion-tasks.png" class="img-fluid rounded-top"
+                  alt="Task management">
+                <div class="card-body">
+                  <p class="card-text fw-semibold text-muted mb-0">Team task management</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <hr>
+      </section>
+
+
+      <!-- --- Structure --- -->
+      <article id="structure" class="row mb-5">
+        <div class="col-12">
+          <h3>Structure</h3>
+          <p>
+            The code structure has been organized in a <strong>clear</strong> and <strong>accessible</strong> way.
+            In the main folder, you can find the fundamental pages
+            (<em>index.html</em>, <em>game.html</em>, and <em>documentation.html</em>), along with folders for
+            <strong>CSS</strong>, <strong>JavaScript</strong>, and resources such as <strong>images</strong>.
+          </p>
+          <p>
+            Each game has its own <em>.css</em> and <em>.js</em> files, as well as their respective
+            <em>game</em>, <em>victory</em>, and <em>defeat</em> pages (and images, if applicable).
+          </p>
+          <p>
+            Finally, we thought it would be a good idea to have a page called <em>games.html</em>,
+            where, using an <strong><em>iframe</em></strong>, the <em>.html</em> files of the games we created would be
+            loaded.
+            Doing this <strong>simplified</strong> the task of creating victory and defeat screens.
+          </p>
+
+          <div class="row justify-content-center text-center">
+            <div class="col-md-3 mb-4">
+              <div class="card border-0 shadow-sm">
+                <img src="resources/img/documentation/main-structure.png" class="img-fluid rounded-top"
+                  alt="Main structure">
+                <div class="card-body">
+                  <p class="card-text fw-semibold text-muted mb-0">Main structure</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 mb-4">
+              <div class="card border-0 shadow-sm">
+                <img src="resources/img/documentation/guerrillas-structure.png" class="img-fluid rounded-top"
+                  alt="Guerrillas structure">
+                <div class="card-body">
+                  <p class="card-text fw-semibold text-muted mb-0">Guerrillas structure</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 mb-4">
+              <div class="card border-0 shadow-sm">
+                <img src="resources/img/documentation/quiz-structure.png" class="img-fluid rounded-top"
+                  alt="Quiz structure">
+                <div class="card-body">
+                  <p class="card-text fw-semibold text-muted mb-0">Quiz structure</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 mb-4">
+              <div class="card border-0 shadow-sm">
+                <img src="resources/img/documentation/trio-structure.png" class="img-fluid rounded-top"
+                  alt="Trio structure">
+                <div class="card-body">
+                  <p class="card-text fw-semibold text-muted mb-0">Trio structure</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+      </article>
+
+      <article id="games-description">
+        <!-- --- GAMES DESCRIPTION --- -->
+        <div class="row mb-5">
+          <div class="col-12">
+            <h3>Games Description</h3>
+            <p>Our website features three games:</p>
+
+            <div class="card mb-4">
+              <div class="card-header bg-success text-white text-center">
+                <h4>Quiz</h4>
+              </div>
+              <div class="card-body">
+                <p class="mb-2">
+                  The player answers <strong>questions</strong> from various <strong>categories</strong> or a
+                  <em>specific topic</em> within a limited time.
+                </p>
+                <p class="mb-2">
+                  Each <span class="text-success"><strong>correct</strong></span> answer adds points, while an
+                  <span class="text-danger"><strong>incorrect</strong></span> answer subtracts points from the final
+                  score.
+                </p>
+              </div>
+            </div>
+
+            <div class="card mb-4 shadow-sm border-0">
+              <div class="card-header bg-primary text-white text-center">
+                <h4 class="mb-0">Trios</h4>
+              </div>
+              <div class="card-body">
+                <p class="mb-2">
+                  The player has a <strong>timer</strong> to find all the <strong>card trios</strong>.
+                </p>
+                <p class="mb-2">
+                  Selecting <span class="text-danger"><strong>incorrectly</strong></span> will cost time;
+                  if correct, the player <span class="text-success"><strong>gains time</strong></span>.
+                </p>
+                <p class="mb-0">
+                  The goal is to find all trios <em>before time runs out</em>.
+                </p>
+              </div>
+            </div>
+
+            <div class="card mb-4 shadow-sm border-0">
+              <div class="card-header bg-danger text-white text-center">
+                <h4 class="mb-0">Guerrillas</h4>
+              </div>
+              <div class="card-body">
+                <p class="mb-2">
+                  The game pits the player against the machine on a <strong>three-column board</strong>.
+                </p>
+                <p class="mb-2">
+                  Each player has a limited amount of <strong>health</strong> and must place soldiers in the columns to
+                  <strong>attack</strong> the opponent.
+                </p>
+                <p class="mb-2">
+                  If a player does not place soldiers in a column to <span
+                    class="text-danger"><strong>defend</strong></span>, they will take damage.
+                </p>
+                <p class="mb-2">
+                  Soldiers have different <strong>stats</strong> (<em>health</em> and <em>damage</em>), and battles
+                  between them determine which soldier remains in the column.
+                </p>
+                <p class="mb-0">
+                  The game ends when one player loses all their <strong>health</strong>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+      </article>
+
+      <article id="code-structure">
+        <!-- --- CODE STRUCTURE --- -->
+        <div class="row mb-5">
+          <div class="col-12">
+            <h3>Code Structure</h3>
+            Structuring the code has been a heavy task, given the large number of files we had to manage.
+            Since there is not much to comment on CSS styles and HTML code, the most important files to mention are the
+            JavaScript files.
+
+            <div class="card mb-4">
+              <div class="card-header text-center">
+                <button class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#collapseInfo"
+                  aria-expanded="true" aria-controls="collapseInfo">
+                  <h4>Main</h4>
+                </button>
+              </div>
+              <div id="collapseInfo" class="collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="card-body text">
+                  <p>This JavaScript file aims to update the <code>src</code> attribute of the iframe in
+                    <code>games.html</code>, allowing a different game to load based on the page URL.
+                  </p>
+                  <p>The <code>updateSrc()</code> function retrieves the <code>game</code> parameter from the URL using
+                    <code>URLSearchParams</code>. If the parameter is present, the iframe with ID
+                    <code>game-iframe</code>
+                    will have its <code>src</code> updated with the URL of the specified game. If the <code>game</code>
+                    parameter is not found in the URL, an error message is shown in the console.
+                  </p>
+                  <p>This process occurs automatically when the page loads, as <code>updateSrc()</code> is linked to the
+                    <code>load</code> event of the <code>window</code> object.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-4">
+              <div class="card-header text-center">
+                <button class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#collapseTimer"
+                  aria-expanded="true" aria-controls="collapseTimer">
+                  <h4>Timer</h4>
+                </button>
+              </div>
+              <div id="collapseTimer" class="collapse" aria-labelledby="headingTimer"
+                data-bs-parent="#accordionExample">
+                <div class="card-body text">
+                  <p>This is a basic timer that will be used by games that work with timers.</p>
+                  <p>The <code>decrementTime()</code> function runs every second using <code>setInterval()</code>.
+                    It decreases the value of the <code>time</code> variable and updates the content of the element
+                    <code>&lt;div id="timerDisplay"&gt;</code> to show the remaining time.
+                  </p>
+                  <p>When time reaches 0, the <code>end()</code> function is executed, which stops the timer using
+                    <code>clearInterval(interval)</code>. In each game, this function should be replaced with the
+                    desired
+                    code to run when time runs out.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-4">
+              <div class="card-header text-center">
+                <button class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#collapseQuiz"
+                  aria-expanded="true" aria-controls="collapseQuiz">
+                  <h4>Quiz</h4>
+                </button>
+              </div>
+              <div id="collapseQuiz" class="collapse" aria-labelledby="headingQuiz" data-bs-parent="#accordionExample">
+                <div class="card-body text">
+                  <p>A variable <code>questions</code> is defined containing an array of objects, each representing a
+                    question with its options and correct answer.</p>
+                  <p>The game shows one question at a time using the <code>showQuestion()</code> function, which also
+                    dynamically creates the answer buttons. Each answer has a distinctive color and a <code>click</code>
+                    event to check if it is correct.</p>
+                  <p>If the answer is correct, a point is added to the score. When time runs out or the user answers,
+                    <code>markAnswers()</code> is called to display the results of the current question.
+                  </p>
+                  <p>The "Next" button allows moving to the next question. Once all questions are answered, the
+                    <code>endTime()</code> function saves the score in <code>localStorage</code> and redirects to a
+                    results page (<code>quiz-end.html</code>).
+                  </p>
+                  <p>The game also includes the <code>shuffleArray()</code> function, which shuffles the questions
+                    randomly at the start.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-4">
+              <div class="card-header text-center">
+                <button class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#collapseTrios"
+                  aria-expanded="true" aria-controls="collapseTrios">
+                  <h4>Trios</h4>
+                </button>
+              </div>
+              <div id="collapseTrios" class="collapse" aria-labelledby="headingTrios"
+                data-bs-parent="#accordionExample">
+                <div class="card-body">
+                  <p>When the game starts, the cards are shuffled using <code>shuffleCards()</code>. Cards are
+                    represented with images, all initially displayed with their back side visible (a default image
+                    simulating the back). Each card has a number as a class identifying its card type ID.</p>
+                  <p>When the player clicks on a card, <code>chooseCard()</code> runs. This function flips the card and
+                    adds it to the array of chosen cards. When three cards are chosen, the IDs in the array are
+                    compared:</p>
+                  <ul>
+                    <li>If the three cards are the same, they are marked as found and time is added to the timer.</li>
+                    <li>If they are different, the player is penalized by losing time, and the cards are flipped back
+                      after one second.</li>
+                  </ul>
+                  <p>Already chosen and found cards cannot be selected again. These cards are distinguished from the
+                    rest using the classes <code>.choosen</code> and <code>.found</code>.</p>
+                  <p>Player progress is indicated with visual effects, such as changing the color and text of the
+                    element with ID <code>penalization</code> to show time penalties or bonuses.</p>
+                  <p>The game ends under two conditions:</p>
+                  <ul>
+                    <li><strong>Defeat:</strong> when time runs out, the iframe content changes to
+                      <code>trio-lose.html</code>.
+                    </li>
+                    <li><strong>Victory:</strong> when the player finds all trios, they are redirected to
+                      <code>trio-win.html</code>.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-4">
+              <div class="card-header text-center">
+                <button class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#collapseGuerrillas"
+                  aria-expanded="true" aria-controls="collapseGuerrillas">
+                  <h4>Guerrillas</h4>
+                </button>
+              </div>
+              <div id="collapseGuerrillas" class="collapse" aria-labelledby="headingGuerrillas"
+                data-bs-parent="#accordionExample">
+                <div class="card-body">
+                  <p>When the game loads, the <code>initializeGame()</code> function runs, setting up the entire game.
+                    This function calls others such as <code>updateShopWarriors()</code> (which updates the warriors in
+                    the shop) and <code>updateInfo()</code> (which displays the health and money of the player and
+                    enemy).</p>
+                  <p>Soldier stats are stored in an array, as are the enemy's and player's slots.</p>
+                  <p>The player can select warriors from the shop, dragging them to available cells on their
+                    battlefield. The cells where warriors can be placed are managed using
+                    <code>addDragStartEvent()</code>, <code>onDrop()</code>, and <code>enableDragAndDrop()</code>, which
+                    allow dragging and dropping the warriors.
+                  </p>
+                  <p>When the player ends their turn, <code>nextTurn()</code> is triggered. This function performs
+                    combat between the warriors using <code>combat()</code>, calculating damage by comparing both arrays
+                    of slots (enemy slot 1 with player slot 1, and so on). Then the turn passes to the enemy, who makes
+                    a move using <code>enemyIA()</code>, placing warriors randomly on the battlefield.</p>
+                  <p>The <code>updateField()</code> and <code>updateInfo()</code> functions update health values and
+                    warrior positions after each turn, ensuring they display correctly in the interface. The
+                    <code>checkEnd()</code> function checks if either side has won or lost.
+                  </p>
+                  <p>The player has full control over deploying warriors, combat, and managing resources like coins. The
+                    shop and cells update according to the player's decisions, with logic preventing placing warriors
+                    without enough money or available space.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+      </article>
+
+      <article id="issues" >
+        <!-- --- PROBLEMS ENCOUNTERED --- -->
+        <div class="row mb-5">
+          <div class="col-12">
+            <h3>Problems Encountered</h3>
+            <div class="accordion" id="accordionProblems">
+
+              <!-- Problem 1 -->
+              <div class="card mb-3">
+                <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                      aria-expanded="true" aria-controls="collapseOne">
+                      1. Quiz answers were not displayed correctly
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                  data-bs-parent="#accordionProblems">
+                  <div class="card-body">
+                    <p>Correct or incorrect answers were not visible after the player selected them, which made
+                      immediate feedback difficult.</p>
+                    <h6>Solution:</h6>
+                    <p>The function previously used to validate answers was poorly implemented from the start and was
+                      called incorrectly. It had to be rewritten from scratch in <code>markAnswers()</code> with a
+                      better algorithm and more developed logic.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Problem 2 -->
+              <div class="card mb-3">
+                <div class="card-header" id="headingTwo">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      2. "Next" button in Quiz was not working
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionProblems">
+                  <div class="card-body">
+                    <p>The button intended to move to the next question in the quiz was not working correctly,
+                      preventing progress through the questionnaire.</p>
+                    <h6>Solution:</h6>
+                    <p>It was constantly displayed, even when an answer had not been chosen yet. The JavaScript was
+                      modified to show and hide it as needed, while also ensuring it performed its function correctly.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Problem 3 -->
+              <div class="card mb-3">
+                <div class="card-header" id="headingThree">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      3. Quiz end screen did not show win or loss
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                  data-bs-parent="#accordionProblems">
+                  <div class="card-body">
+                    <p>When the player reached the final screen, there was no information about whether they had won or
+                      lost the quiz, reducing clarity in the user experience.</p>
+                    <h6>Solution:</h6>
+                    <p>localStorage was not being used correctly. With a few adjustments, it was fixed to correctly pass
+                      the score and total questions.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Problem 4 -->
+              <div class="card mb-3">
+                <div class="card-header" id="headingFour">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                      4. Selecting already chosen or found cards in Trios
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                  data-bs-parent="#accordionProblems">
+                  <div class="card-body">
+                    <p>It was possible to select cards that were already found or chosen, which made the game very
+                      confusing.</p>
+                    <h6>Solution:</h6>
+                    <p>The classes <code>.found</code> and <code>.choosen</code> were used to differentiate these cards,
+                      along with CSS styles for visual distinction and controls in the <code>chooseCard()</code>
+                      function.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+      </article>
+
+      <article id="improvements">
+        <!-- --- POSSIBLE IMPROVEMENTS --- -->
+        <div class="row mb-3">
+          <div class="col-12">
+            <h3 class="text-primary mb-4">Possible Improvements</h3>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                ✅ Increase the number of questions in the Quiz.
+              </li>
+              <li class="list-group-item">
+                ⚙️ Add difficulty levels in Trios, with more or fewer cards to find.
+              </li>
+              <li class="list-group-item">
+                ⚖️ Further balance the statistics of soldiers in Guerrillas.
+              </li>
+              <li class="list-group-item">
+                🖥️ Improve the user interface of Guerrillas.
+              </li>
+              <li class="list-group-item">
+                🎨 Use higher quality sprites in Guerrillas.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="bg-dark text-white py-4 ps-5">
+      <p>© 2025 PlayZone - All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <!-- BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -1,14 +1,24 @@
 /* Hoja de estilos concretos para la pagina game.html */
 
-#game-iframe{
-    min-height: 80vh;
-    padding: 50px;
+#game-iframe {
+    min-height: 100vh;
+    border: 0;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
-/* Media Query para pantallas pequeñas (menos de 576px) */
+/* Media queries para pantallas pequeñas */
 @media (max-width: 768px) {
+    #page-body {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    #main-content {
+        padding: 1% 2%;
+    }
+
     #game-iframe {
-        padding-top: 0; /* Elimina el padding superior */
-        padding-bottom: 0; /* Elimina el padding inferior */
+        padding: 5px;
     }
 }

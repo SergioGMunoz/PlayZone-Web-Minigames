@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +12,7 @@
 <body class="d-flex flex-column justify-content-center align-items-center min-vh-100 m-0">
 
     <div id="logo" class="d-flex justify-content-center mb-4">
-        <img id="logo-img" src="img/QUIZ.png" alt="logoQuiz">
+        <img id="logo-img" src="img/QUIZ.png" alt="Quiz Logo">
     </div>
 
     <section id="start" class="text-center">
@@ -20,8 +20,8 @@
        <p id="final-score" class="mb-4"> </p>
 
        <div class="d-flex justify-content-center gap-5 mt-5">
-        <button id="home" class="btn btn-secondary">Menú principal</button>
-        <button id="play-again" class="btn btn-secondary">Volver a jugar</button>
+        <button id="home" class="btn btn-secondary">Main Menu</button>
+        <button id="play-again" class="btn btn-secondary">Play Again</button>
       </div>
     </section>
 
@@ -29,7 +29,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     
     <script>
-        // Recuperar el puntaje y el número total de preguntas desde localStorage
+        // Retrieve the score and total number of questions from localStorage
         const score = parseInt(localStorage.getItem('quizScore')) || 0;
         const totalQuestions = parseInt(localStorage.getItem('questionsAnswered')) || 0;
 
@@ -38,26 +38,26 @@
 
         switch (score) {
             case 5:
-                winMessage.textContent = '¡Perfecto, todas correctas!';
+                winMessage.textContent = 'Perfect, all correct!';
                 break;
             case 4:
-                winMessage.textContent = '¡Genial, casi perfecto!';
+                winMessage.textContent = 'Great, almost perfect!';
                 break;
             case 3:
-                winMessage.textContent = '¡Bravoo! :)';
+                winMessage.textContent = 'Bravo! :)';
                 break;
             case 2:
-                winMessage.textContent = 'Bueno, puedes mejorar...';
+                winMessage.textContent = 'Not bad, you can improve...';
                 break;
             case 1:
-                winMessage.textContent = ' Intenta otra vez.';
+                winMessage.textContent = 'Try again.';
                 break;
             case 0:
-                winMessage.textContent = 'No acertaste ninguna.';
+                winMessage.textContent = 'None correct.';
                 break;
         }
 
-        finalScore.innerHTML = `Has acertado <span id="points-end">${score}/${totalQuestions}</span> preguntas`;
+        finalScore.innerHTML = `You got <span id="points-end">${score}/${totalQuestions}</span> questions right`;
 
         document.getElementById('home').addEventListener('click', function () {
             window.top.location.href = "../../index.html"; 

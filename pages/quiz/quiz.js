@@ -16,28 +16,28 @@ setTimeElement(timerElement);
 // Preguntas y respuestas
 const questions = [
     {
-        question: "¿Cuál es la capital de Francia?",
-        options: ["Madrid", "París", "Roma", "Berlín"],
+        question: "What is the capital of France?",
+        options: ["Madrid", "Paris", "Rome", "Berlin"],
         correct: 1
     },
     {
-        question: "¿Cuál es el resultado de (5 + 3) × 2 - 4?",
+        question: "What is the result of (5 + 3) × 2 - 4?",
         options: ["12", "16", "10", "8"],
         correct: 0
     },
     {
-        question: "¿Qué lenguaje se usa para estilizar páginas web?",
+        question: "Which language is used to style web pages?",
         options: ["HTML", "CSS", "JavaScript", "Python"],
         correct: 1
     },
     {
-        question: "¿Quién pintó la Mona Lisa?",
-        options: ["Van Gogh", "Picasso", "Leonardo da Vinci", "Miguel Ángel"],
+        question: "Who painted the Mona Lisa?",
+        options: ["Van Gogh", "Picasso", "Leonardo da Vinci", "Michelangelo"],
         correct: 2
     },
     {
-        question: "¿Cuál es el océano más grande del mundo?",
-        options: ["Atlántico", "Índico", "Ártico", "Pacífico"],
+        question: "What is the largest ocean in the world?",
+        options: ["Atlantic", "Indian", "Arctic", "Pacific"],
         correct: 3
     }
 ];

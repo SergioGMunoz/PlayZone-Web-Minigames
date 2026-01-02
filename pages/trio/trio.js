@@ -21,12 +21,12 @@ let maxCardsChosen = false;
 shuffleCards();
 
 // Bucle que pone una imagen por defecto a las cartas (simulando la parte trasera) y guarda el id en una clase.
-let divCards = document.getElementById("cartas")
+let divCards = document.getElementById("cards")
 for (let i = 0; i < cards.length; i++) {
   let img = document.createElement("img");
   img.src = "img/Card-Back.png";
   img.classList = "trioCard " + cards[i].id;
-  img.alt = "Carta misteriosa";
+  img.alt = "Mysterious Card";
   img.addEventListener("click", function() {
     chooseCard(this);
   });
@@ -53,7 +53,7 @@ function chooseCard(card) {
 
   card.classList.add("chosen");
   const cardId = card.classList[1];
-  card.src = `img/card${cardId}.png`;
+  card.src = `img/Card${cardId}.png`;
   chosenCards.push(card);
 
   // Al haber chosen 3 cartas
@@ -145,7 +145,7 @@ function gameOver() {
     iframe.src = "pages/trio/trio-lose.html";
 
   } else {
-    console.error("No se encontró el iframe para cambiar a pantalla de derrota.");
+    console.error("The iframe to switch to the defeat screen was not found..");
   }
 }
 
@@ -157,6 +157,6 @@ function victory() {
     iframe.src = "pages/trio/trio-win.html";
     
   } else {
-    console.error("No se encontró el iframe para cambiar a pantalla de victoria.");
+    console.error("The iframe to switch to the victory screen was not found..");
   }
 }
